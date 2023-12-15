@@ -3,8 +3,32 @@ import java.util.Scanner;
 public class AtmOrnegi {
 	public static void main(String[] args) {
 		
+		String sifre="ilayda23";
 		double bakiye=0;
 		Scanner input= new Scanner(System.in); 
+		
+		System.out.println("Bankamıza hoş geldiniz. Şifrenizi girin:");
+		String sifreDeneme = input.next();
+		
+
+			for (int j = 0; j < 4; j++) {
+				if (sifre.equals(sifreDeneme)) {
+					System.out.println("Giriş başarılı. Hoşgeldiniz");
+					break;
+
+				}
+				else {
+					System.out.println("Hatalı giriş tekrar deneyiniz");
+					sifreDeneme = input.next();
+				}
+				
+
+			}
+			if(sifre.equals(sifreDeneme)==false) {
+				System.out.println("Giriş başarısız");
+				System.exit(1);
+				
+			}
 		
 		while(true) {
 			System.out.println("Yapacağınız işlemi seçin:\n"+"1- Bakiye sorgulama\n"+"2- Para Yatırma\n"+"3- Para çekme\n"+"4- Kart iade");
@@ -53,6 +77,7 @@ public class AtmOrnegi {
 			System.out.println("Başka işlem yapmak ister misiniz (e/h)");
 			String devamMiTamamMi=input.next();
 			if(devamMiTamamMi.equalsIgnoreCase("h")) {
+				System.out.println("Kartınızı alınız..");
 				break;
 				
 			}
